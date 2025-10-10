@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Kreatif Pink</title>
+  <style>
+    /* ========== RESET & FONT ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      color: #fff0f6;
+      scroll-behavior: smooth;
+      background: linear-gradient(270deg, #2d0038, #5a005a, #ff5da2, #2d0038);
+      background-size: 600% 600%;
+      animation: gradientMove 18s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #ffb6d9;
+      font-weight: 600;
+    }
+
+    /* ========== NAVBAR ========== */
+    nav {
+      background: rgba(45, 0, 56, 0.7);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      backdrop-filter: blur(12px);
+    }
+    nav a {
+      color: #ffe4f0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ff82c3;
+      transform: scale(1.1);
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 6rem 2rem 3rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* ========== PROFILE ========== */
+    .profile {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #ff9ac7;
+      margin-bottom: 1rem;
+      animation: float 4s ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(255, 153, 204, 0.5);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .profile h1 {
+      font-size: 1.8rem;
+      color: #ffccdd;
+    }
+
+    .typing {
+      border-right: 3px solid #ffb6d9;
+      display: inline-block;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .profile p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1rem;
+      color: #ffe4f0;
+    }
+
+    /* ========== PENDIDIKAN & ORGANISASI ========== */
+    .card {
+      background: rgba(255, 192, 203, 0.1);
+      padding: 1.2rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: 0.4s ease;
+      border: 1px solid rgba(255, 182, 219, 0.3);
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      background: rgba(255, 192, 203, 0.2);
+      box-shadow: 0 0 15px rgba(255, 182, 219, 0.4);
+    }
+
+    /* ========== PORTOFOLIO ========== */
+    .portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .portfolio-item {
+      background: rgba(255, 192, 203, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      transition: 0.4s;
+      cursor: pointer;
+      border: 1px solid rgba(255, 182, 219, 0.3);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+      opacity: 0.85;
+      filter: brightness(0.9);
+    }
+    .portfolio-item .content {
+      padding: 1rem;
+      transition: 0.3s;
+    }
+    .portfolio-item:hover .content {
+      background: rgba(255, 182, 219, 0.15);
+    }
+    .portfolio-item h3 {
+      color: #ffccdd;
+      margin-bottom: 0.5rem;
+    }
+    .portfolio-item p {
+      color: #ffe4f0;
+      font-size: 0.9rem;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #ffb6d9;
+      font-size: 0.9rem;
+    }
+
+    /* ANIMASI SCROLL */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav>
+    <a href="#profile">Profil</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#organisasi">Organisasi</a>
+    <a href="#portofolio">Portofolio</a>
+  </nav>
+
+  <!-- ========== PROFILE ========== -->
+  <section id="profile" class="fade-in">
+    <div class="profile">
+      <img src="https://via.placeholder.com/150/ff9ac7/ffffff?text=Kamu" alt="Foto Profil">
+      <h1><span id="typed" class="typing"></span></h1>
+      <p>Web developer dan desainer kreatif dengan gaya visual lembut dan interaktif, fokus pada pengalaman pengguna yang indah dan modern.</p>
+    </div>
+  </section>
+
+  <!-- ========== PENDIDIKAN ========== -->
+  <section id="pendidikan" class="fade-in">
+    <h2>Pendidikan</h2>
+    <div class="card">
+      <h3>Universitas Teknologi Kreatif</h3>
+      <p>2021 - Sekarang</p>
+      <p>Program Studi: Teknik Informatika</p>
+    </div>
+    <div class="card">
+      <h3>SMA Negeri Inspirasi</h3>
+      <p>2018 - 2021</p>
+      <p>Jurusan: IPA</p>
+    </div>
+  </section>
+
+  <!-- ========== ORGANISASI ========== -->
+  <section id="organisasi" class="fade-in">
+    <h2>Pengalaman Organisasi</h2>
+    <div class="card">
+      <h3>Ketua Divisi Multimedia</h3>
+      <p>Himpunan Mahasiswa Informatika | 2022 - 2023</p>
+      <p>Mengelola konten visual dan media sosial untuk kegiatan kampus dengan sentuhan desain estetik.</p>
+    </div>
+    <div class="card">
+      <h3>Anggota Web Design Club</h3>
+      <p>2021 - Sekarang</p>
+      <p>Berpartisipasi dalam proyek web kolaboratif dan pelatihan desain UI/UX.</p>
+    </div>
+  </section>
+
+  <!-- ========== PORTOFOLIO ========== -->
+  <section id="portofolio" class="fade-in">
+    <h2>Portofolio Website</h2>
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x250/ff7eb9/ffffff?text=SweetFoodie" alt="SweetFoodie">
+        <div class="content">
+          <h3>SweetFoodie</h3>
+          <p>Tech Stack: React.js, Node.js, MongoDB</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x250/ffa6c1/ffffff?text=PinkLearn" alt="PinkLearn">
+        <div class="content">
+          <h3>PinkLearn</h3>
+          <p>Tech Stack: Next.js, TailwindCSS, Firebase</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x250/ff99cc/ffffff?text=TravelBlush" alt="TravelBlush">
+        <div class="content">
+          <h3>TravelBlush</h3>
+          <p>Tech Stack: Vue.js, Express, PostgreSQL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    © 2025 Nama Kreatif 💖 | All Rights Reserved.
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // Efek fade-in saat scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Efek mengetik otomatis
+    const text = "Hai, Aku Nama Kreatif 💕";
+    const typedElement = document.getElementById("typed");
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        typedElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 100);
+      }
+    }
+    window.onload = typeText;
+  </script>
+</body>
+</html>
